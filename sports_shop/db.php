@@ -2,10 +2,11 @@
 // Database connection file
 // Configure these with your actual database credentials
 
-$host = 'localhost';
-$db_user = 'root';
-$db_password = '';
-$db_name = 'sports_shop_db';
+// Use environment variables if available (for Railway deployment)
+$host = getenv('DB_HOST') ?: 'localhost';
+$db_user = getenv('DB_USER') ?: 'root';
+$db_password = getenv('DB_PASS') ?: '';
+$db_name = getenv('DB_NAME') ?: 'sports_shop_db';
 
 // Create connection
 $conn = new mysqli($host, $db_user, $db_password, $db_name);
